@@ -27,11 +27,15 @@ Breweries.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
+    State: {
+      type: DataTypes.STRING,
+      allowNull: false,
+  },
     zipcode: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    Remark: {
+    remark: {
         type: DataTypes.STRING,
         allowNull: false,
     },
