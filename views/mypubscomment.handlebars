@@ -1,0 +1,37 @@
+<div class="blog-card">
+    <div class="blog-card-header">
+    <h2>{{breweries.name}}</h2>
+    </div>
+    <div class="card-body">
+      <p>
+        address:
+        {{breweries.address}}
+      </p>
+      <p>
+        city, state, zip:
+        {{breweries.city}}   {{breweries.state}}   {{breweries.zip}}
+      </p>
+      <p>
+        review:
+         {{breweries.Remark}}
+      </p>
+      <p>
+        comments:
+         {{breweries.comments}}            
+      </p>
+      <p>
+        brewery id:  <label id="blogid"> {{breweries.id}} </label>  
+        <div> 
+          <button id="deletebrewery" type="submit" class="btn btn-primary">Delete Brewery</button>
+          </div>
+      </p>        
+             <div class="pubcomment">
+              <label for="pubdesc">Comment:</label></br>
+              <textarea class="input" style="width: 50%;" id="pubcomment"></textarea></br>
+              <button id="pubcommentsubmit" type="submit" class="btn btn-primary">Submit</button>
+             </div>
+    </div>
+  </div>
+  
+ 
+ {{!-- <script src="js/mypubscomment.js"></script> --}}
