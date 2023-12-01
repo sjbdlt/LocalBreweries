@@ -12,7 +12,7 @@ Breweries.init(
       autoIncrement: true,
     },
     refid: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.UUID,
         allowNull: false,
       },
     name: {
