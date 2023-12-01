@@ -1,0 +1,49 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Left Column for Search Options -->
+        <div class="col-md-3 col-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Search Options</h5>
+                    <!-- Text input for searching by text -->
+                    <div class="form-group">
+                        <label for="searchText">Search by City:</label>
+                        <input type="text" class="form-control" id="searchText" name="searchText">
+                        <button type="button" class="btn btn-primary mt-3" id="searchButton">Search</button>
+                    </div>
+                    <!-- Buttons for searching by city -->
+                    <h6 class="mt-3">Search by City:</h6>
+                    <button type="button" class="btn btn-secondary mr-2" id="btnPhoenix">Phoenix</button>
+                    <button type="button" class="btn btn-secondary mr-2" id="btnTuscon">Tuscon</button>
+                    <button type="button" class="btn btn-secondary mr-2" id="btnFlagstaff">Flagstaff</button>
+                    <!-- Add more city buttons as needed -->
+                </div>
+            </div>
+        </div>
+        <!-- Right Column for API Information -->
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">API Information</h5>
+                    {{#each apiData as |brewery|}}
+                    <div id="apiResults">
+                        <div id="brewery-template">
+                          {{!-- {{brewery.id}} --}}
+                          {{brewery.name}}  {{brewery.brewery_type}}   
+                          <p>Address:{{brewery.address_1}} {{brewery.city}} {{brewery.state}} {{brewery.type}}</p>
+                          <p>Phone:{{brewery.phone}}</p>             
+                         <p>{{brewery.website_url}}         
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+<script src="/js/homepage.js" type="text/javascript"></script>
