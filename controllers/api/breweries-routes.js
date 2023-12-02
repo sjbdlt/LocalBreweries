@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Breweries, User } = require('../models');
+const { Breweries, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // GET all breweries
