@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const { Breweries, User } = require('../models');
+const { Breweries, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // GET all breweries
-router.get('/', withAuth,  async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const brewData = await Breweries.findAll({
       include: [
@@ -18,7 +18,7 @@ router.get('/', withAuth,  async (req, res) => {
     const breweries = brewData.map((brewery) =>
     brewery.get({ plain: true })
     );
-    //res.json(mypubs);  
+    //res.json(breweries);  
     res.render('mypubs', {
       breweries,
       logged_in: true
@@ -31,7 +31,7 @@ router.get('/', withAuth,  async (req, res) => {
 
 
 // GET one breweries
-router.get('/:id', withAuth, async (req, res) => {
+router.get('/singlebrewery/:id', async (req, res) => {
   try {
     const brewData = await Breweries.findByPk(req.params.id, {
       include: [
@@ -40,10 +40,10 @@ router.get('/:id', withAuth, async (req, res) => {
         },
       ],
     });
-    const Breweries = brewData.get({ plain: true });
-    //res.json(mypubs); 
-    res.render('mypubs', {
-      Breweries,
+    const breweries = brewData.get({ plain: true });
+    //res.json(breweries); 
+    res.render('mypubscomment', {
+      breweries,
       logged_in: true
     });
   } catch (err) {

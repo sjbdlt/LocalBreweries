@@ -1,14 +1,15 @@
 <div class="row">     
      {{#each breweries as |brewery| }}
-     <div class="col=6">
-        <div class="card" id="mybrewlist">
-              <h3>{{brewery.name}}</h3>
-              {{brewery.address}}
-              {{brewery.city}}  {{brewery.state}}  {{brewery.zipcode}}
-             <h4> {{brewery.Remark}} </h4>
-             <h6> {{brewery.comments}} </h6>              
-        </div>
-     </div>
+        <div class="card" id="mybrewlist" style="width: 100%;">
+          <div> <h3>{{brewery.name}}</h3></div>
+          <div> {{brewery.address}}</div>
+          <div> {{brewery.city}} {{brewery.State}}, {{brewery.zipcode}}</div> 
+          <div><h4> {{brewery.Remark}} </h4></div> 
+          <div><h6> {{brewery.comments}} </h6> </div> 
+          <div class="reviewcomment">
+              <a href="singlebrewery/{{brewery.id}}">Comment</a>  
+          </div> 
+        </div>       
      {{/each}}
 </div>
 
