@@ -1,0 +1,19 @@
+
+<div class="container-fluid">
+        <!-- Right Column for API Information -->
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">API Information for {{city}}</h5>
+                    {{#each apiData as |brewery|}}
+                        <div id="brewery-template">
+                            {{brewery.name}} {{brewery.brewery_type}}
+                            <p>Address: {{brewery.address_1}} {{brewery.city}} {{brewery.state}} {{brewery.type}}</p>
+                            <p>Phone: {{brewery.phone}}</p>
+                            <p>Website: {{brewery.website_url}}</p>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+</div>
