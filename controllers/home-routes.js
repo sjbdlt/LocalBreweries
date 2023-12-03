@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
         const breweryData = await fetch('https://api.openbrewerydb.org/breweries?per_page=3');
         const apiData = await breweryData.json();
     
-        console.log(apiData)
+        //console.log(apiData)
         
         // res.json(apiData)
         res.render('homepage', {
@@ -24,16 +24,16 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.post('/citySearch', async (req, res) => {
+router.get('/citySearch/:searchCity', async (req, res) => {
     try {
-        console.log(req.body.searchCity);
-        const brewUrl = `https://api.openbrewerydb.org/breweries?per_page=1&by_city=${req.body.searchCity}`
+        //console.log(req.params.searchCity);
+        const brewUrl = `https://api.openbrewerydb.org/breweries?per_page=1&by_city=${req.params.searchCity}`
         const breweryData = await fetch(brewUrl);
         const apiData = await breweryData.json();
     
-        console.log('hi')
+        //console.log('hi')
         
-        res.json(apiData)
+        //res.json(apiData)
         res.render('cities', {
             apiData,
             logged_in: req.session.logged_in
