@@ -24,13 +24,33 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.get('/login',(req,res)=>{
-if(req.session.logged_in)
-{
-    res.redirect('homepage');
-    return;
-}
-    res.render('login')
-});
+router.post('/citySearch', async (req, res) => {
+    try {
+        console.log(req.body.searchCity);
+        const brewUrl = `https://api.openbrewerydb.org/breweries?per_page=1&by_city=${req.body.searchCity}`
+        const breweryData = await fetch(brewUrl);
+        const apiData = await breweryData.json();
+    
+        console.log('hi')
+        
+        res.json(apiData)
+        res.render('cities', {
+            apiData,
+            logged_in: req.session.logged_in
+        })
+    } catch (err) {
+        console.log(err.message)
+        res.status(500).json(err.message)
+    }
+})
 
-module.exports = router;
+router.get('/login',(req,res)=>{
+    if(req.session.logged_in)
+    {
+        res.redirect('homepage');
+        return;
+    }
+        res.render('login')
+    });
+    
+    module.exports = router;
