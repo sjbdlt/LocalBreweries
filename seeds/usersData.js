@@ -2,22 +2,19 @@ const { User } = require('../models');
 
 const userdata = [
   {
-    name: 'Steven Blake',  
+    name: 'StevenBlake',  
     email: 's@b.com' ,
-    member_date: 'November 22, 2023 08:30:00',
-    password: 'Brew123'
+    password: 'Brew1234'
   },  
   {
-    name: 'Brandon Kelly',  
+    name: 'BrandonKelly',  
     email: 'b@k.com' ,
-    member_date: 'November 22, 2023 08:30:00',
-    password: 'Brew123'
+    password: 'Brew1234'
   },  
   {
-    name: 'Shawn Clarke',  
+    name: 'ShawnClarke',  
     email: 's@c.com' ,
-    member_date: 'November 22, 2023 08:30:00',
-    password: 'Brew123'
+    password: 'Brew1234'
   },  
 ];
 
