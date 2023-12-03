@@ -1,4 +1,3 @@
-
 <div class="container-fluid">
     <div class="row">
         <!-- Left Column for Search Options -->
@@ -6,7 +5,6 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Search Options</h5>
-                  
                     <div class="form-group">
                         <label for="searchText">Search by City:</label>
                         <input type="text" class="form-control" id="searchText" name="city">
@@ -14,21 +12,26 @@
                     </div>
                 </div>
             </div>
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="map-title">Map</h5>
+                </div>
+            </div>
         </div>
         <!-- Right Column for API Information -->
         <div class="col-md-9">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">API Information</h5>
+                    <h5 class="card-title">Local Breweries:</h5>
                     {{#each apiData as |brewery|}}
-                    <div id="apiResults">
-                        <div id="brewery-template">
-                          {{!-- {{brewery.id}} --}}
-                          {{brewery.name}}  {{brewery.brewery_type}}   
-                          <p>Address:{{brewery.address_1}} {{brewery.city}} {{brewery.state}} {{brewery.type}}</p>
-                          <p>Phone:{{brewery.phone}}</p>             
-                         <p>{{brewery.website_url}}         
-                        </div>
+                    <div class="brewery-template">
+                        <!-- {{brewery.id}} -->
+                        <p><strong>{{brewery.name}} ({{brewery.brewery_type}})</p></strong>
+                        <p>Address:</p>
+                        <p>{{brewery.address_1}}, {{brewery.city}}, {{brewery.state}} {{brewery.type}}</p>
+                        <p>Phone:</p>
+                        <p>+1{{brewery.phone}}</p>
+                        <p>Website: <a href="{{brewery.website_url}}" target="_blank">{{brewery.website_url}}</a></p>
                     </div>
                     {{/each}}
                 </div>

@@ -1,0 +1,14 @@
+button {
+    width: 50%;
+}
+
+.brewery-template {
+    border: outset;
+    padding: 2vh;
+    margin-bottom: 2vh;
+}
+
+.card-body {
+    text-align: center;
+}
+
