@@ -2,6 +2,10 @@ button {
     width: 50%;
 }
 
+#map {
+    height: 250px;;
+}
+
 .brewery-template {
     border: outset;
     padding: 2vh;

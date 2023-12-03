@@ -13,15 +13,14 @@
                 </div>
             </div>
             <div class="card mt-3">
-                <div class="card-body">
+                <div class="card-body"  id="map">
                     <h5 class="map-title">Map</h5>
                 </div>
             </div>
         </div>
         <!-- Right Column for API Information -->
         <div class="col-md-9">
-            <div class="card">
-                <div class="card-body">
+                <div class="card-body" id="map">
                     <h5 class="card-title">Local Breweries:</h5>
                     {{#each apiData as |brewery|}}
                     <div class="brewery-template">
@@ -38,5 +37,6 @@
                     {{/each}}
                 </div>
             </div>
-        </div>
     </div>
+
+<script src="/js/homepage.js"></script>
