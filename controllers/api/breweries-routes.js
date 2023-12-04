@@ -3,17 +3,17 @@ const { Breweries, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // GET all breweries
-router.post('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const brewData = await Breweries.findAll({
       include: [
         {
           model: User
         },        
-      ],     
+      ] ,
       where: {
-        user_id: req.body.user_id
-      }
+        user_id: req.session.user_id,
+      },
     });
     const breweries = brewData.map((brewery) =>
     brewery.get({ plain: true })
@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
 
 
 // GET one breweries
-router.get('/singlebrewery/:id', async (req, res) => {
+router.get('/singlebrewery/:id',  async (req, res) => {
   try {
     const brewData = await Breweries.findByPk(req.params.id, {
       include: [
@@ -52,12 +52,41 @@ router.get('/singlebrewery/:id', async (req, res) => {
   }
 });
 
+router.post('/addbrewery/', withAuth, async(req, res) => {
+  console.log('in post');
+  console.log(req.body);
+
+  
+  try {    
+    const dbbrewData = await Breweries.create({
+      refid: req.body.refid,
+      name: req.body.brewname,
+      address: req.body.address,
+      city: req.body.city,
+      State: req.body.state,
+      zipcode: req.body.zipcode,
+      Phone: req.body.phone,
+      Website: req.body.website,
+      latitude: req.body.latitude,
+      longitude: req.body.longitude,
+      remark: req.body.remark,
+      comments: req.body.comment,
+      created_date: req.body.currentDate,
+      user_id: req.session.user_id,
+    });
+      res.status(200).json(dbbrewData);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 // Updates breweries comment on its id
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     //Calls the update method on the Book model
     Breweries.update(
       {
-        comments: req.body.comments        
+        comments: req.body.comment       
       },
       {       
         where: {

@@ -21,19 +21,43 @@ Breweries.init(
     },
     address: {
       type: DataTypes.STRING,
+      defaultValue: '',
       allowNull: false,
     },
     city: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      defaultValue: '',
+      allowNull: false,
     },
     State: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING,      
+      defaultValue: '',
       allowNull: false,
-  },
+    },
     zipcode: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      defaultValue: '',
+      allowNull: false,
+    },
+    Phone: {
+      type: DataTypes.STRING,
+      defaultValue: '',
+      allowNull: false,
+    },
+    Website: {
+      type: DataTypes.STRING,
+      defaultValue: '',
+      allowNull: false,
+    },
+    latitude: {
+      type: DataTypes.STRING,
+      defaultValue: '',
+      allowNull: false,
+    },
+    longitude: {
+      type: DataTypes.STRING,
+      defaultValue: '',
+      allowNull: false,
     },
     remark: {
         type: DataTypes.STRING,
