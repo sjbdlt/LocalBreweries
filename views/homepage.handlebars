@@ -28,7 +28,8 @@
                         <p><i>Phone:</i></p>
                         <p>+1{{brewery.phone}}</p>
                         <a href="{{brewery.website_url}}" target="_blank">{{brewery.website_url}}</a></p>
-                        <button type="button" class="btn btn-primary mt-3" id="saveButton">Save</button>
+                        <button type="button" class="btn btn-primary mt-3 btn-save-brewery" id="saveButton" data-index="{{brewery.id}}">Save</button>
+                            <button type="button" class="btn btn-primary mt-3 btn-map-brewery" id="mapbtn" data-index="{{brewery.id}}">Map</button>
                     </div>
                     {{/each}}
                 </div>
