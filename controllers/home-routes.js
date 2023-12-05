@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { Breweries, User } = require('../models');
+const withAuth = require('../utils/auth');
+
 router.get('/', async (req, res) => {
     try {
         const postData = await Breweries.findAll({
@@ -24,7 +26,7 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.get('/citySearch/:searchCity', async (req, res) => {
+router.get('/citySearch/:searchCity', withAuth, async (req, res) => {
     try {
         //console.log(req.params.searchCity);
         const brewUrl = `https://api.openbrewerydb.org/breweries?per_page=5&by_city=${req.params.searchCity}`
@@ -34,7 +36,7 @@ router.get('/citySearch/:searchCity', async (req, res) => {
         //console.log('hi')
         
         //res.json(apiData)
-        res.render('cities', {
+        res.render('homepage', {
             apiData,
             logged_in: req.session.logged_in
         })
