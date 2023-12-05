@@ -66,7 +66,7 @@ Verified the api calls and make sure inputs, updates and deletion from database 
 ## QUESTIONS:
 
 ### User ID - SJBDLT, Bkness, Shawnclarke21
-### User Email - sblake@blakeis.com
+### User Email - sblake@blakeis.com, kbrandon863@gmail.com, srclark777@gmail.com
 
 Heroku - 
 

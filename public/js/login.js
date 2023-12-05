@@ -17,7 +17,7 @@ console.log('hello')
         if (response.ok) {
             document.location.replace('/');
         } else {
-            alert(response.status);
+            alert("Check your Username or Password");
         }
     }
 };

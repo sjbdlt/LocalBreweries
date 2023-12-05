@@ -83,7 +83,7 @@ function saveBrewery() {
         })
         .then(function (response) {
             if (response.ok) {
-                alert('Brewery Saved');
+                alert('Brewery saved, click mypubs to view');
             } else {
                 alert('Failed to save');
             }
@@ -109,6 +109,10 @@ function mapBrewery() {
             let latitude = data[0].latitude;
             let longitude = data[0].longitude;
 
+            if (latitude && longitude === null) {
+                alert('No map information could be found')
+                return;
+            }
             // check if map is already initialized so we dont error with container in use
             if (map) {
 
