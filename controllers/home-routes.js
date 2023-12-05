@@ -34,7 +34,7 @@ router.get('/citySearch/:searchCity', async (req, res) => {
         //console.log('hi')
         
         //res.json(apiData)
-        res.render('cities', {
+        res.render('homepage', {
             apiData,
             logged_in: req.session.logged_in
         })
