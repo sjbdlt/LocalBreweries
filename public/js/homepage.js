@@ -82,6 +82,13 @@ function saveBrewery() {
                 longitude = ''
             };
 
+            if (phone == null) {
+                phone = ''
+            };
+            if (website == null) {
+                website = ''
+            };
+
             if (refid && brewname) {
 
                 const response = fetch('/api/breweries/addbrewery', {
