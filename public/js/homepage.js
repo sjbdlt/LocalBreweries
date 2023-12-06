@@ -5,7 +5,13 @@ const cityLookup = async (event) => {
     event.preventDefault();
 
     const searchCity = document.getElementById('searchText').value;
-    document.location.replace(`/citySearch/${searchCity}`);
+
+    if (searchCity){
+        document.location.replace(`/citySearch/${searchCity}`);
+    }else{
+        alert('Please enter a city to search.')
+    }
+   
 };
 
 document.addEventListener('keyup', function (event) {
@@ -101,6 +107,8 @@ var map;
 // function to pass brewery lat long data to leaflet map 
 function mapBrewery() {
     var brewid = $(this).attr('data-index');
+    //alert(brewid);
+
 
     var breurl = `https://api.openbrewerydb.org/breweries?by_ids=${brewid}`;
 
@@ -159,4 +167,3 @@ function mapBrewery() {
 
 brewDisplay.on('click', '.btn-save-brewery', saveBrewery);
 brewDisplay.on('click', '.btn-map-brewery', mapBrewery);
-
