@@ -17,7 +17,7 @@ const hbs = exphbs.create({ helpers });
 // Set up sessions
 const sess = {
   secret: 'localbrew',
-  cookie:{},
+  cookie: {},
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({

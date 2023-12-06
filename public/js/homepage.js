@@ -14,6 +14,12 @@ const cityLookup = async (event) => {
    
 };
 
+document.addEventListener('keyup', function (event) {
+    if (event.key === 'Enter') {
+        cityLookup(event);
+    }
+});
+
 document.querySelector('#searchButton').addEventListener('click', cityLookup);
 
 let refid = '';
@@ -103,6 +109,7 @@ function mapBrewery() {
     var brewid = $(this).attr('data-index');
     //alert(brewid);
 
+
     var breurl = `https://api.openbrewerydb.org/breweries?by_ids=${brewid}`;
 
     fetch(breurl)
@@ -114,11 +121,7 @@ function mapBrewery() {
             let brewname = data[0].name;
             let latitude = data[0].latitude;
             let longitude = data[0].longitude;
-
-            if (latitude && longitude === null) {
-                alert('No map information could be found')
-                return;
-            }
+            // alert(brewname); 
             // check if map is already initialized so we dont error with container in use
             if (map) {
 

@@ -38,10 +38,6 @@ const enterreview = async (event) => {
       }
     }
   };
-  
-
-
 
 document.querySelector('#pubcommentsubmit').addEventListener('click', enterreview);
-
 document.querySelector('#deletebrewery').addEventListener('click', deletebrewert);

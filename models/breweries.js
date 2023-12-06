@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Breweries extends Model {}
+class Breweries extends Model { }
 
 Breweries.init(
   {
@@ -12,12 +12,12 @@ Breweries.init(
       autoIncrement: true,
     },
     refid: {
-        type: DataTypes.UUID,
-        allowNull: false,
-      },
+      type: DataTypes.UUID,
+      allowNull: false,
+    },
     name: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     address: {
       type: DataTypes.STRING,
@@ -30,7 +30,7 @@ Breweries.init(
       allowNull: false,
     },
     State: {
-      type: DataTypes.STRING,      
+      type: DataTypes.STRING,
       defaultValue: '',
       allowNull: false,
     },
@@ -60,23 +60,23 @@ Breweries.init(
       allowNull: false,
     },
     remark: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     comments: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     created_date: {
       type: DataTypes.DATE,
       allowNull: false,
     },
     user_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'user',
-          key: 'id',
-        },
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
     },
   },
   {

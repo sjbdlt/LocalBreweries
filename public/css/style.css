@@ -2,6 +2,11 @@
     width: 50%;
 }
 
+#logout {
+    margin-bottom: 5px;
+    padding: 9px
+}
+
 .card {
     height: 350px;
     border-radius: 10px;

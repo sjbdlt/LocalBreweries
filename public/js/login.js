@@ -3,15 +3,15 @@
 
 const loginformhandler = async (event) => {
     event.preventDefault();
-console.log('hello')
+    console.log('hello')
     const name = document.querySelector('#loginName').value.trim();
     const password = document.querySelector('#loginPassword').value.trim();
 
     if (name && password) {
         const response = await fetch('api/user/login', {
             method: 'POST',
-            body: JSON.stringify({name, password }),
-            headers: { 'Content-Type': 'application/json' },    
+            body: JSON.stringify({ name, password }),
+            headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
@@ -26,16 +26,16 @@ console.log('hello')
 
 const signupformhandler = async (event) => {
     event.preventDefault();
-// console.log("hi");
+    // console.log("hi");
     const email = document.querySelector('#createEmail').value.trim();
     const username = document.querySelector('#createName').value.trim();
     const password = document.querySelector('#createPassword').value.trim();
-// console.log(email);
+    // console.log(email);
     if (email && username && password) {
         const response = await fetch('/api/user/', {
             method: 'POST',
             body: JSON.stringify({ email, username, password }),
-            headers: { 'Content-Type': 'application/json' },    
+            headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
@@ -45,6 +45,18 @@ const signupformhandler = async (event) => {
         }
     }
 };
+
+document.addEventListener('keyup', function (event) {
+    if (event.key === 'Enter') {
+        loginformhandler(event);
+    }
+});
+
+document.addEventListener('keyup', function (event) {
+    if (event.key === 'Enter') {
+        signupformhandler(event);
+    }
+});
 
 document.querySelector('#loginSubmit').addEventListener('click', loginformhandler);
 document.querySelector('#signupSubmit').addEventListener('click', signupformhandler);
