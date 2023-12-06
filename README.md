@@ -73,3 +73,8 @@ Heroku -
 repo - https://github.com/sjbdlt/LocalBreweries.git
 
         make fetch to a route listener for route call api get data then render
+
+
+##Issue:
+
+Certain breweries aren't saving to mypubs

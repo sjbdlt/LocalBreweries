@@ -29,12 +29,12 @@ router.get('/', async (req, res) => {
 router.get('/citySearch/:searchCity', withAuth, async (req, res) => {
     try {
         //console.log(req.params.searchCity);
-        const brewUrl = `https://api.openbrewerydb.org/breweries?per_page=5&by_city=${req.params.searchCity}`
+        const brewUrl = `https://api.openbrewerydb.org/breweries?by_city=${req.params.searchCity}`
         const breweryData = await fetch(brewUrl);
         const apiData = await breweryData.json();
-    
+
         //console.log('hi')
-        
+
         //res.json(apiData)
         res.render('homepage', {
             apiData,
@@ -46,13 +46,12 @@ router.get('/citySearch/:searchCity', withAuth, async (req, res) => {
     }
 })
 
-router.get('/login',(req,res)=>{
-    if(req.session.logged_in)
-    {
+router.get('/login', (req, res) => {
+    if (req.session.logged_in) {
         res.redirect('homepage');
         return;
     }
-        res.render('login')
-    });
-    
-    module.exports = router;
+    res.render('login')
+});
+
+module.exports = router;
