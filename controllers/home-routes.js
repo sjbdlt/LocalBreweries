@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
 
         const brewery = postData.map(brewery => brewery.get({ plain: true })) // session of object is global to backend
 
-        const breweryData = await fetch('https://api.openbrewerydb.org/breweries?per_page=3');
+        const breweryData = await fetch('https://api.openbrewerydb.org/breweries?by_city=phoenix');
         const apiData = await breweryData.json();
 
         // console.log(apiData)
