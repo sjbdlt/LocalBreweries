@@ -2,6 +2,10 @@ body {
     background: linear-gradient(to right, #aafca1, #4caf50);
 }
 
+h1, h5 {
+    font-family: 'Lobster';
+}
+
 #searchButton {
     width: 50%;
 }

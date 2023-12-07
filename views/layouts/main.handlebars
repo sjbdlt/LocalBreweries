@@ -7,15 +7,14 @@
   <title>Find Local Breweries!</title>
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  {{!-- <link rel="stylesheet" href="/css/jass.css"> --}}
-  <link rel="stylesheet" href="/css/style.css"> 
-   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
-      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
-
+  {{!--
+  <link rel="stylesheet" href="/css/jass.css"> --}}
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Lora&family=Zen+Maru+Gothic:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
@@ -29,7 +28,7 @@
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
-         <a href="/" class="mr-2">Home</a>
+        <a href="/" class="mr-2">Home</a>
         {{#if logged_in}}
         <a href="/api/breweries" class="mr-2">My Pubs</a>
         <button class="btn btn-link" id="logout">Logout</button>
