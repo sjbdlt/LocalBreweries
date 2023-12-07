@@ -14,11 +14,19 @@
     </p>
     <p>
       <b>Phone:</b></br>
+      {{#if breweries.Phone}}
       <a href="tel:1+{{breweries.Phone}}">+1{{breweries.Phone}}</a>
+      {{else}}
+      <p class="no-phone"><i>No phone number available</i></p>
+      {{/if}}
     </p>
     <p>
-      <b>Website:</b><br>
+        <b>Website:</b><br>
+      {{#if breweries.Website}}
       <a href="{{breweries.Website}}" target="_blank">{{breweries.Website}}</a>
+      {{else}}
+      <p class="-no-website"><i>No website available</i></p>
+      {{/if}}
     </p>
     <p>
       <label id="brewid" hidden="hidden"> {{breweries.id}} </label>
