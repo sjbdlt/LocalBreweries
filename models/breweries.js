@@ -1,8 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-
 class Breweries extends Model { }
-
 Breweries.init(
   {
     id: {
@@ -86,5 +84,4 @@ Breweries.init(
     modelName: 'breweries',
   }
 );
-
 module.exports = Breweries;
