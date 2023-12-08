@@ -10,8 +10,8 @@
 # User Acceptance
 
     When a page display a list of breweries in an area
-    When a site ask me to login 
-    When i can save, update or remove breweries from a destination i looked up
+    When a site ask me to login before I search 
+    When I can save, comment or remove breweries from a destination i looked up
 
 ## DESCRIPTION:
 
@@ -73,9 +73,4 @@ Heroku - https://radiant-fjord-87739-920e7bb79c22.herokuapp.com
 
 repo - https://github.com/sjbdlt/LocalBreweries.git
 
-        make fetch to a route listener for route call api get data then render
-
-
-##Issue:
-
-Certain breweries aren't saving to mypubs
+![wireframe](images/LocalBrewery.png)
